@@ -1,6 +1,8 @@
 # Python Robotic Control
 Python platform for remote control of robotics systems and cameras. 
 
+Provides support for accessible robotics platforms, wireless camera streaming from onboard cameras mounted on robots, and external odometry taken from iOS devices. 
+
 ## Setup
 ### Arduino
 It is assumed that an Arduino UNO board is being used, with continuous servos connected to pins 9 and 10. Note that this robot is fully tethered, so a USB extension may be required. 
@@ -39,6 +41,13 @@ For a camera module connected to the Raspberry Pi, refer to [this tutorial](http
 `python PiCam.py`
 
 on the client computer, and the video stream should show up. 
+
+## External Odometry
+Start the script `iPadServer.py` on the iOS device through the app Pythonista, which can be found on the Apple App Store. On the client computer, run
+
+`python iPadClient.py`
+
+and a stream of accelerometer and gyroscope data should start.
 
 ## Credits
 Harvey Mudd College Computer Science REU 2016
