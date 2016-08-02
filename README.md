@@ -49,6 +49,9 @@ Start the script `iPadServer.py` on the iOS device through the app Pythonista, w
 
 and a stream of accelerometer and gyroscope data should start.
 
+## Overhead Tracking
+Also included in this repository is an example script that uses OpenCV and an overhead camera to track a robot. The user can set a location with the mouse. To use this script, first ensure that Python 3.5+ and OpenCV 3.0.0 bindings are both installed. Next, secure an overhead camera. Finally, start either `ArduinoTracker.py` or `CreateTracker.py` and click and drag to select the robot. Click again to set the destination. 
+
 ## Credits
 Harvey Mudd College Computer Science REU 2016
 
