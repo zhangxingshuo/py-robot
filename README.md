@@ -18,6 +18,8 @@ Upload the file `PythonRobot.ino` to the Arduino. Check the serial port in the A
 
 in CLI. This will open a blank window. Click on the window. The WASD keys will control the robot.
 
+If the script cannot connect, then change the serial port within the script to the serial port found within the Arduino IDE.
+
 ### iCreate
 Start the script `CreateServer.py` on the Raspberry Pi. If an error is thrown, check the IP address with `ifconfig` and edit the script accordingly. 
 
@@ -48,6 +50,8 @@ Start the script `iPadServer.py` on the iOS device through the app Pythonista, w
 `python iPadClient.py`
 
 and a stream of accelerometer and gyroscope data should start.
+
+If the connection is refused, check the IP address of the iPad in the WiFi settings. Ensure that the client computer is connected to the same WiFi and retry the connection. 
 
 ## Overhead Tracking
 Also included in this repository is an example script that uses OpenCV and an overhead camera to track a robot. The user can set a location with the mouse. To use this script, first ensure that Python 3.5+ and OpenCV 3.0.0 bindings are both installed. Next, secure an overhead camera. Finally, start either `ArduinoTracker.py` or `CreateTracker.py` and click and drag to select the robot. Click again to set the destination. 
