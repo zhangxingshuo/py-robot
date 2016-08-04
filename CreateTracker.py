@@ -10,7 +10,7 @@ is marked, along with the approximate axis of orientation.
 
 Usage:
 ------
-    ArduinoTracker.py [<video source>] [<serial port>] [<baud rate>]
+    CreateTracker.py [<video source>] [<serial port>] [<baud rate>]
 
     Baud rate is 115200 by default.
 
