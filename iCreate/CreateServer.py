@@ -1,5 +1,31 @@
+'''
+iCreate Server-side Control
+===========================
+
+Starts a server on the Raspberry Pi that 
+accepts a client over WiFi. The client can
+then control the iCreate using the serial
+connection control framework also provided
+in this repository. 
+
+See https://github.com/zhangxingshuo/py-robot
+for documentation.
+
+Usage:
+------
+        On the Raspberry Pi, start
+
+        "python CreateServer.py"
+
+        and a message should appear saying 
+        "Server Started". You can now connect
+        a client computer using the client-side
+        framework provided in this repository.
+'''
+
 import socket
 from create import Create
+
 def Main(socket):
         print 'Server Started'
 
@@ -24,6 +50,7 @@ def Main(socket):
 	Main(socket)
 
 if __name__=='__main__':
+        # host IP address -- change as needed
 	host = '134.173.27.40' 
         port = 5000
 

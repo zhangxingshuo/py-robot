@@ -1,12 +1,37 @@
+'''
+iCreate Client-side Control
+===========================
+
+Provides socket framework to connect to
+iCreate server running on Raspberry Pi over
+WiFi connection. Allows wireless control of 
+Raspberry Pi.
+
+See https://github.com/zhangxingshuo/py-robot
+for documentation.
+
+Usage:
+------
+  Start the iCreate server on the Raspberry Pi
+  connected to the iCreate. 
+
+  In CLI, run
+
+  "python CreateClient.py"
+
+  and a window should appear. Control with WASD. 
+'''
+
 import socket
-# import pygame 
 import cv2 
 import numpy as np
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# host IP address -- change as needed
 host ="134.173.27.40"
-# host = '134.173.43.35'
 port = 5000
+
 print("Connecting...")
 s.connect((host,port))
 print("Connected!!")
@@ -17,32 +42,12 @@ def ts(message):
    data = s.recv(1024).decode()
    print (data)
 
-# pygame.init()
-# size = [800, 600]
-# screen = pygame.display.set_mode(size)
-# pygame.display.set_caption('Create Control')
 img = np.zeros((500,500, 3), np.uint8)
 filename = 'commands.txt'
 file = open(filename, 'w')
 
 
-while 1:
-# r = input('Enter Command: ')
-   # if not r:
-   #  r= input('Enter Command: ')
-   # for event in pygame.event.get():
-   #      if event.type == pygamge.QUIT:
-   #          sys.exit(0)
-   #      elif event.type == pygame.KEYDOWN:
-   #          if event.key == pygame.K_w:
-   #              r = 'f'
-   #          elif event.key == pygame.K_a:
-   #              r = 'l'
-   #          elif event.key == pygame.K_d:
-   #              r = 'r'
-   #          elif event.key == pygame.K_s:
-   #              r = 'b'
-   #      else:
+while True:
     cv2.imshow('control', img)
     file = open(filename, 'a')
     k = cv2.waitKey(0)
