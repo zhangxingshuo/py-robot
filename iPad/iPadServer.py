@@ -1,7 +1,26 @@
-# coding: utf-8
+'''
+iPad Server-side Odometry Reading
+=================================
+
+Reads odometry data from the iPad in the form
+of accelerometer and gyroscope vectors. 
+
+See https://github.com/zhangxingshuo/py-robot
+for documentation.
+
+Requires Pythonista to run on iPad.
+
+Usage:
+------
+    Start Pythonista, and run this script. A 
+    message should appear saying "Server 
+    Started". Once a connection from a client
+    is accepted, odometry data should appear on 
+    the screen.
+'''
+
 import socket
 import motion
-import photos
 import time
 
 def Main(socket):   
@@ -26,6 +45,7 @@ def Main(socket):
     Main(socket)
         
 if __name__=='__main__':
+    # host IP address -- change as needed
     host= '134.173.29.21'
     port= 5001
     
