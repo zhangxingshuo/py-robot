@@ -1,3 +1,25 @@
+'''
+IP Camera Video Stream
+======================
+
+Provides framework built in OpenCV to retrieve video
+stream from a wireless IP camera. In this example, the
+script reads a stream from mjpg-streamer.
+
+Credit: http://www.virtualroadside.com/blog/index.php/2015/04/03/better-python-interface-to-mjpg-streamer-using-opencv/
+
+Usage:
+------
+    Start the video stream on the Raspberry Pi with mjpg-streamer. To set this up, see
+    http://petrkout.com/electronics/low-latency-0-4-s-video-streaming-from-raspberry-pi-mjpeg-streamer-opencv/
+
+    Next, run in CLI
+
+    "python PiCam.py"
+
+    and the video stream should appear. 
+'''
+
 import re
 from urllib.request import urlopen
 import cv2
@@ -16,7 +38,6 @@ rdbuffer = None
 clen_re = re.compile(b'Content-Length: (\d+)\\r\\n')
 
 # Read each frame
-# TODO: This is hardcoded to mjpg-streamer's behavior
 indexOfImage = 0
 while True:
       
@@ -48,7 +69,7 @@ while True:
 
     img = cv2.imdecode(np.frombuffer(rdbuffer, count=clen, dtype=np.byte), flags=cv2.IMREAD_COLOR)
     
-    # do something with img?
+    # show image
     cv2.imshow('Image', img)
     k = cv2.waitKey(1)
     if k == ord('s'):
